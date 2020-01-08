@@ -1,4 +1,4 @@
-package com.example.assignment
+package com.example.templatepage
 
 import androidx.room.Dao
 import androidx.room.Insert

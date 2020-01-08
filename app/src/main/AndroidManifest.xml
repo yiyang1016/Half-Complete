@@ -17,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".requestActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/app_name" />
+        <activity android:name=".reportActivity"
+            android:parentActivityName=".MainActivity"
             android:label="@string/app_name" />
     </application>
 

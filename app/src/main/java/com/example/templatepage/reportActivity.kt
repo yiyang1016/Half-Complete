@@ -12,13 +12,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
-//import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.request.*
+import kotlinx.android.synthetic.main.report.*
 
-class requestActivity: AppCompatActivity() {
+class reportActivity : AppCompatActivity(){
     internal lateinit var myDialog : Dialog
     internal lateinit var txt : TextView
-    var collectDate: String = ""
 
     private val navigationBarListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when(item.itemId){
@@ -42,45 +40,38 @@ class requestActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.request)
+        setContentView(R.layout.report)
         val actionBar = supportActionBar
-        actionBar!!.title = "Request"
-
+        actionBar!!.title = "Report"
         bottomNavigation.setOnNavigationItemSelectedListener(navigationBarListener)
 
-        findViewById<Button>(R.id.requestBtn).setOnClickListener {
+        findViewById<Button>(R.id.reportBtn).setOnClickListener {
             insertRequest()
         }
-
 
     }
 
     fun insertRequest() {
-        var db = Room.databaseBuilder(applicationContext, RequestDatabase::class.java, "RecycleDB").build()
-        if (showDate.text.isEmpty()) {
-            Toast.makeText(this, "Please Select Collect Date", Toast.LENGTH_SHORT).show()
-        }
-        else if(floorNo.text.isEmpty()||address.text.isEmpty()){
+        var db = Room.databaseBuilder(applicationContext, ReportDatabase::class.java, "RecycleDB").build()
+        if(txtcomment.text.isEmpty()||address.text.isEmpty()){
             Toast.makeText(this, "Please Fill All The Empty Blank", Toast.LENGTH_SHORT).show()
-        }else
-        {
+        }
+        else{
             val thread = Thread {
-                var requestEntity = Request()
+                var requestEntity = Report()
 
                 requestEntity.address = address.text.toString()
-                requestEntity.no = floorNo.text.toString()
-                requestEntity.date = showDate.text.toString()
-                db.requestDAO().insert(requestEntity)
+                requestEntity.comment = txtcomment.text.toString()
+                db.reportDAO().insert(requestEntity)
 
                 //Fetch Records
-                db.requestDAO().readRequest().forEach()
+                db.reportDAO().readRequest().forEach()
                 {
                     Log.i("Fetch Records", "Id : ${it.id}")
                     Log.i("Fetch Records", "Address : ${it.address}")
-                    Log.i("Fetch Records", "No : ${it.no}")
-                    Log.i("Fetch Records", "Date : ${it.date}")
+                    Log.i("Fetch Records", "No : ${it.comment}")
                 }
-                db.requestDAO().clear()
+                db.reportDAO().clear()
             }
                 thread.start()
             showDialog()
@@ -89,7 +80,7 @@ class requestActivity: AppCompatActivity() {
     fun showDialog(){
         myDialog = Dialog(this)
         myDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        myDialog.setContentView(R.layout.dialog_activity)
+        myDialog.setContentView(R.layout.report_dialog)
         myDialog.setTitle("Inform")
 
         txt = myDialog.findViewById<View>(R.id.button_ok) as TextView
@@ -98,9 +89,5 @@ class requestActivity: AppCompatActivity() {
             myDialog.cancel()
         }
         myDialog.show()
-    }
-    fun collectDate(date: String){
-        collectDate = date
-        showDate.text = collectDate
     }
 }

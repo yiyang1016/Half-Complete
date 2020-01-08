@@ -5,16 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Request(
+class Report(
     @PrimaryKey(autoGenerate = true)
-    var  id: Int = 0,
+    var id: Int = 0,
 
     @ColumnInfo(name = "address")
     var address: String = "",
 
-    @ColumnInfo(name = "no")
-    var no: String = "",
-
-    @ColumnInfo(name = "date")
-    var date: String = ""
-)
+    @ColumnInfo(name = "comment")
+     var comment: String = ""
+    )
