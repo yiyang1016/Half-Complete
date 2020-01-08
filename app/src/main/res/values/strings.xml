@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TemplatePage</string>
+
+    <string name="dialog_text">Your request will be handle as soon as possible.</string>
+    <string name="request_successful">Request Successful</string>
+    <string name="ok">OK</string>
+    <string name="select_date_to_collect">Please Select Collect Date</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
