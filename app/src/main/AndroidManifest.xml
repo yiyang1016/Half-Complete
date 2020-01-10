@@ -17,24 +17,27 @@
             </intent-filter>
         </activity>
         <activity android:name=".requestActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".home_pageActivity"
             android:label="Request" />
         <activity android:name=".reportActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".home_pageActivity"
             android:label="Report" />
         <activity android:name="com.example.newsedu.NewsEdu"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".home_pageActivity"
             android:label="NewsEdu"/>
         <activity android:name=".categoryActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".home_pageActivity"
             android:label="Category" />
         <activity android:name=".GarbageClassificationSpec"
             android:parentActivityName=".categoryActivity"
             android:label="Category" />
         <activity android:name=".scheduleActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".home_pageActivity"
             android:label="Category" />
-
+        <activity android:name=".home_pageActivity"
+            android:label="HomePage" />
+        <activity android:name=".RegisterActivity"
+            android:label="Register" />
     </application>
 
 </manifest>

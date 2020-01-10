@@ -32,5 +32,15 @@
     <string name="start_category">Start Category</string>
     <string name="activity_name">Category Detail</string>
 
-
+    <!--Login/Registration-->
+    <string name="textView">ID Number:  </string>
+    <string name="textView2">Password:  </string>
+    <string name="textView3">Name:  </string>
+    <string name="textView6">Address:  </string>
+    <string name="editText7">ID Number</string>
+    <string name="editText4">Password</string>
+    <string name="button">Login</string>
+    <string name="button2">Sign Up</string>
+    <string name="button3">Register</string>
+    <string name="button4">Clear</string>
 </resources>
