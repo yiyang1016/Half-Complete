@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="30dp"
     android:paddingRight="20dp"
     android:focusable="false"
     android:focusableInTouchMode="true"
@@ -18,7 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Address of Missed Collect:" />
+        android:text="Address of Missed Collect:"
+        android:layout_marginLeft="30dp"/>
 
     <EditText
         android:id="@+id/address"
@@ -27,7 +27,8 @@
         android:layout_below="@id/textView1"
         android:layout_marginTop="15dp"
         android:ems="15"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_marginLeft="30dp"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -35,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/address"
         android:text="Please Provide Contents:"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp"/>
 
     <EditText
         android:id="@+id/txtcomment"
@@ -44,14 +46,16 @@
         android:layout_below="@id/textView3"
         android:layout_marginTop="15dp"
         android:ems="15"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="30dp"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="381dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation"
-        android:id="@+id/bottomNavigation">
+        android:id="@+id/bottomNavigation"
+        android:layout_marginLeft="10dp"  >
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <Button
@@ -62,5 +66,6 @@
         android:layout_alignParentRight="false"
         android:layout_marginTop="50dp"
         android:text="Report"
+        android:layout_marginLeft="30dp"
         />
 </RelativeLayout>

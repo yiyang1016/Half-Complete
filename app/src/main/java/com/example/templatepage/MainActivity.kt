@@ -18,13 +18,15 @@ class MainActivity : AppCompatActivity(){
     private val navigationBarListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when(item.itemId){
             R.id.navigation_home->{
-                startActivity(Intent(this, MainActivity::class.java))
+                //startActivity(Intent(this, MainActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_category->{
+                startActivity(Intent(this, categoryActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_calendar->{
+                startActivity(Intent(this, scheduleActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_request->{

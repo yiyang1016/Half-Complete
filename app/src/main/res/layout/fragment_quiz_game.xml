@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quizBind"
+            type="com.example.templatepage.QuizGameFragment"/>
+<!--           type="com.example.templatepage.QuizGameFragment"-->
+    </data>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/questionImage"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/image_header_height"
+                android:layout_marginStart="@dimen/horizontal_margin"
+                android:layout_marginTop="@dimen/vertical_margin"
+                android:layout_marginEnd="@dimen/horizontal_margin"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/questionText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:imageResource="@{quizBind.currentQuestion.img_icon}" />
+
+            <TextView
+                android:id="@+id/questionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/question_horizontal_margin"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="@dimen/question_horizontal_margin"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:fontFamily="sans-serif"
+                android:text="@{quizBind.currentQuestion.garbageName}"
+                android:textSize="@dimen/question_text_size"
+                android:textStyle="bold"
+                android:typeface="normal"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionImage"
+                tools:text="Newspaper" />
+
+
+            <TextView
+                android:id="@+id/questionTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:text="This garbage belongs to which category?"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionText" />
+
+            <ImageButton
+                android:scaleType="fitCenter"
+                android:id="@+id/paperImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:src="@drawable/blue_bin"
+                app:layout_constraintEnd_toStartOf="@+id/plasticImageView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/questionTV" />
+
+            <TextView
+                android:id="@+id/paperTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/question_horizontal_margin"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:text="@string/paper"
+                android:textSize="@dimen/answer_text_size"
+                android:typeface="normal"
+                app:layout_constraintEnd_toStartOf="@+id/plasticTV"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/paperImageView" />
+
+            <ImageButton
+                android:scaleType="fitCenter"
+                android:id="@+id/plasticImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:src="@drawable/orange_bin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/paperImageView"
+                app:layout_constraintTop_toBottomOf="@+id/questionTV" />
+
+            <TextView
+                android:id="@+id/plasticTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:text="@string/plastic"
+                android:textSize="@dimen/answer_text_size"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/paperTV"
+                app:layout_constraintTop_toBottomOf="@+id/plasticImageView" />
+
+            <ImageButton
+                android:scaleType="fitCenter"
+                android:id="@+id/glassImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:src="@drawable/brown_bin"
+                app:layout_constraintEnd_toStartOf="@+id/nonRecyclableImageView"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/paperTV" />
+
+            <TextView
+                android:id="@+id/glassTV"
+                android:layout_width="125dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:text="@string/glass"
+                android:textAlignment="center"
+                android:textSize="@dimen/answer_text_size"
+                android:typeface="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/nonRecyclableTV"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/glassImageView" />
+
+            <ImageButton
+                android:scaleType="fitCenter"
+                android:id="@+id/nonRecyclableImageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:src="@drawable/grey_bin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/glassImageView"
+                app:layout_constraintTop_toBottomOf="@+id/plasticTV"/>
+
+
+            <TextView
+                android:id="@+id/nonRecyclableTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="@dimen/vertical_margin"
+                android:clickable="true"
+                android:fontFamily="sans-serif"
+                android:text="@string/non_recyclable"
+                android:textSize="@dimen/answer_text_size"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/glassTV"
+                app:layout_constraintTop_toBottomOf="@+id/nonRecyclableImageView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>
+</layout>

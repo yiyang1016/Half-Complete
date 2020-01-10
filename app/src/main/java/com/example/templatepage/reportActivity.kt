@@ -18,32 +18,11 @@ class reportActivity : AppCompatActivity(){
     internal lateinit var myDialog : Dialog
     internal lateinit var txt : TextView
 
-    private val navigationBarListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
-        when(item.itemId){
-            R.id.navigation_home->{
-                startActivity(Intent(this, MainActivity::class.java))
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_category->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_calendar->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_request->{
-                startActivity(Intent(this, requestActivity::class.java))
-                return@OnNavigationItemSelectedListener false
-            }
-        }
-        return@OnNavigationItemSelectedListener false
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.report)
         val actionBar = supportActionBar
         actionBar!!.title = "Report"
-        bottomNavigation.setOnNavigationItemSelectedListener(navigationBarListener)
 
         findViewById<Button>(R.id.reportBtn).setOnClickListener {
             insertRequest()
@@ -75,6 +54,8 @@ class reportActivity : AppCompatActivity(){
             }
                 thread.start()
             showDialog()
+            address.setText("")
+            txtcomment.setText("")
         }
     }
     fun showDialog(){

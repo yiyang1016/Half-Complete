@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TemplatePage</string>
+    <string name="app_name">MarBin</string>
 
     <string name="dialog_text">Your request will be handle as soon as possible.</string>
     <string name="report_successful">Report Successful</string>
@@ -10,4 +10,27 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="r">Thank You For Your Report. We are apologize of the missed collected rubbish. We will clean it as fast as possible. \n Thank You</string>
     <string name="request_successful">Request Successful</string>
+
+    <!--News Edu-->
+    <string name="headerName"><![CDATA[News & Education]]></string>
+
+    <!--Category-->
+    <string name="main">Main Page Test</string>
+    <string name="title_game">Game Page Test</string>
+    <string name="title_category">Category Page</string>
+    <string name="title_game_question">Recycle Classification Trivia (%1$d/%2$d)</string>
+    <string name="quiz_game_result">Your Score: %1$d/%2$d</string>
+    <string name="play">Play</string>
+    <string name="play_again">Play Again</string>
+    <string name="score">Score</string>
+    <string name="non_recyclable">Non-Recyclable</string>
+    <string name="glass">Glass</string>
+    <string name="plastic">Plastic</string>
+    <string name="paper">Paper</string>
+    <string name="start">Start Game</string>
+    <string name="_1">1.</string>
+    <string name="start_category">Start Category</string>
+    <string name="activity_name">Category Detail</string>
+
+
 </resources>

@@ -5,4 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="actionbar_background">#00EEFF</color>
     <color name="actionbar_text">#FFFFFF</color>
+    <!--News Edu Color-->
+    <color name="colorText">#3F51B5</color>
+    <color name="colorNewEduHeader">#7DDDE9</color>
+    <!--Category-->
+    <color name="colorClassificationHeader">#7DDDE9</color>
 </resources>

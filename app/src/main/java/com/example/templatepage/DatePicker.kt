@@ -22,7 +22,7 @@ class DatePicker : Fragment() {
         val day = c.get(Calendar.DAY_OF_MONTH)
         val month = c.get(Calendar.MONTH)
         var year = c.get(Calendar.YEAR)
-        var date: String = ""
+        var date: String
         var monthCal: Int
         calBtn.setOnClickListener {
             val dpd = DatePickerDialog(activity!!,

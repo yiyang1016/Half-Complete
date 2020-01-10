@@ -5,19 +5,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="30dp"
-    android:paddingRight="20dp"
+   
     android:focusable="false"
     android:focusableInTouchMode="true"
     tools:context=".MainActivity"
     android:id="@+id/relative_layout">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <fragment
+                android:id="@+id/myNavHostFragment"
+                android:name="com.example.newsedu.NewsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navGraph="@navigation/navigation"
+                app:defaultNavHost="true"
+                />
+        </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="381dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation"
-        android:id="@+id/bottomNavigation">
+        android:id="@+id/bottomNavigation"
+
+        android:layout_marginLeft="10dp">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </RelativeLayout>

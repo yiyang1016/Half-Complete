@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.templatepage.MainPageFragment1"
+        android:label="fragment_title">
+
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.templatepage.GarbageClassificationFrag"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_garbage_classification" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.templatepage.TitleFragment"
+        android:label="TitleFragment" >
+        <action
+            android:id="@+id/action_titleFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizGameResultFragment"
+        android:name="com.example.templatepage.QuizGameResultFragment"
+        android:label="fragment_quiz_game_result"
+        tools:layout="@layout/fragment_quiz_game_result">
+
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_quizGameResultFragment_to_quizGameFragment"
+            app:destination="@id/quizGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quizGameFragment"
+        android:name="com.example.templatepage.QuizGameFragment"
+        android:label="QuizGameFragment" >
+
+        <action
+            android:id="@+id/action_quizGameFragment_to_quizGameResultFragment"
+            app:destination="@id/quizGameResultFragment" />
+    </fragment>
+</navigation>

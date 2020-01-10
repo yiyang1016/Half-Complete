@@ -5,7 +5,7 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/home"
-        android:title="Home" />
+        android:title="Home"/>
     <item
         android:id="@+id/navigation_category"
         android:icon="@drawable/category"
@@ -18,5 +18,5 @@
         android:id="@+id/navigation_request"
         android:checkable="false"
         android:icon="@drawable/request"
-        android:title="Request" />
+        android:title="Request"/>
 </menu>

@@ -20,33 +20,13 @@ class requestActivity: AppCompatActivity() {
     internal lateinit var txt : TextView
     var collectDate: String = ""
 
-    private val navigationBarListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
-        when(item.itemId){
-            R.id.navigation_home->{
-                startActivity(Intent(this, MainActivity::class.java))
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_category->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_calendar->{
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_request->{
-                startActivity(Intent(this, requestActivity::class.java))
-                return@OnNavigationItemSelectedListener false
-            }
-        }
-        return@OnNavigationItemSelectedListener false
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.request)
+
         val actionBar = supportActionBar
         actionBar!!.title = "Request"
-
-        bottomNavigation.setOnNavigationItemSelectedListener(navigationBarListener)
 
         findViewById<Button>(R.id.requestBtn).setOnClickListener {
             insertRequest()
@@ -84,6 +64,9 @@ class requestActivity: AppCompatActivity() {
             }
                 thread.start()
             showDialog()
+            address.setText("")
+            floorNo.setText("")
+            showDate.setText("")
         }
     }
     fun showDialog(){
